@@ -50,6 +50,13 @@ public class ScenesManager : MonoBehaviour
         SceneManager.LoadScene("DifficultiesScene");
     }
 
+    public void QuitGame()
+    // quit game
+    {
+        Application.Quit();
+        Debug.Log("quit");
+    }
+
     public void easyMode()
     {
         gravity = 5;
