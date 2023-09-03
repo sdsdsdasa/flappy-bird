@@ -96,7 +96,7 @@ public class BirdScript : MonoBehaviour
     {
         if (birdIsAlive == true)
         {
-            myRigidbody.velocity = Vector2.left * flapStrengthHorizontal;
+            myRigidbody.velocity = myRigidbody.velocity + Vector2.left * flapStrengthHorizontal;
         }
     }
 
@@ -104,7 +104,7 @@ public class BirdScript : MonoBehaviour
     {
         if (birdIsAlive == true)
         {
-            myRigidbody.velocity = Vector2.right * flapStrengthHorizontal;
+            myRigidbody.velocity = myRigidbody.velocity + Vector2.right * flapStrengthHorizontal;
         }
     }
 }

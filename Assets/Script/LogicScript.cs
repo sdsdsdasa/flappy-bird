@@ -10,10 +10,13 @@ public class LogicScript : MonoBehaviour
     public int player2Score;
     public Text scoreText;
     public Text score2Text;
+    public Text GameOverText;
     public GameObject gameOverScreen;
     public BirdScript Bird1;
     public BirdScript2 Bird2;
+    private bool playWinSound = true;
 
+    [SerializeField] private AudioSource WinSoundEffect;
 
     private void Start()
     {
@@ -49,6 +52,31 @@ public class LogicScript : MonoBehaviour
         // set game over screen active
     {
         gameOverScreen.SetActive(true);
+        if (ScenesManager.mode == "solo")
+        {
+            GameOverText.text = "Game Over";
+            GameOverText.color = new Color32(0,66,255,248);
+        }
+        else if (ScenesManager.mode == "duo")
+        {
+            if (playerScore > player2Score)
+            {
+                GameOverText.text = "Red Won!";
+                GameOverText.color = new Color32(174,56,29,248);
+            }
+            else if (playerScore < player2Score)
+            {
+                GameOverText.text = "Yellow Won!";
+                GameOverText.color = new Color32(248,188,82,248);
+            }
+            else if (playerScore == player2Score)
+            {
+                GameOverText.text = "Draw";
+                GameOverText.color = new Color32(98,120,97,248);
+            }
+            
+        }
+
     }
 
     private void Update()
@@ -65,6 +93,11 @@ public class LogicScript : MonoBehaviour
             if (Bird1.birdIsAlive == false && Bird2.bird2IsAlive == false)
             {
                 gameOver();
+                if (playWinSound == true && GameOverText.text != "Draw")
+                {
+                    WinSoundEffect.Play();
+                    playWinSound = false;
+                }
             }
         }
     }
