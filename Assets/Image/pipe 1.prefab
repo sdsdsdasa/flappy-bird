@@ -121,6 +121,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   logic: {fileID: 0}
+  Bird1: {fileID: 0}
+  Bird2: {fileID: 0}
 --- !u!1 &7452757470327523094
 GameObject:
   m_ObjectHideFlags: 0
