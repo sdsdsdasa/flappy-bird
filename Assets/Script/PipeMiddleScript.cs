@@ -8,11 +8,18 @@ public class PipeMiddleScript : MonoBehaviour
     // public connection between script, in this case LogicScript
     private bool Bird1Collision = false;
     private bool Bird2Collision = false;
+    public BirdScript Bird1;
+    public BirdScript2 Bird2;
 
     // Start is called before the first frame update
     void Start()
     {
         logic = GameObject.FindGameObjectWithTag("Logic").GetComponent<LogicScript>();
+        Bird1 = GameObject.FindGameObjectWithTag("Bird").GetComponent<BirdScript>();
+        if (ScenesManager.mode == "duo")
+        {
+            Bird2 = GameObject.FindGameObjectWithTag("Bird2").GetComponent<BirdScript2>();
+        }
         // find the connection
     }
 
@@ -30,19 +37,24 @@ public class PipeMiddleScript : MonoBehaviour
         Bird2Collision = false;
     }
 
-    public void OnTriggerEnter2D(Collider2D collsion)
+    public void OnTriggerEnter2D(Collider2D collision)
         // providing collision effect
     {
-        if (collsion.gameObject.layer == 3 && Bird1Collision == false)
+        if (collision.gameObject.layer == 3 && Bird1Collision == false)
         {
-            logic.addScore(1);
-            WaitBird1();
-
+            if (Bird1.birdIsAlive == true)
+            {
+                logic.addScore(1);
+                WaitBird1();
+            }
         }
-        if (collsion.gameObject.layer == 7 && Bird2Collision == false)
+        if (collision.gameObject.layer == 7 && Bird2Collision == false)
         {
-            logic.addScore2(1);
-            WaitBird2();
+            if (Bird2.bird2IsAlive == true)
+            {
+                logic.addScore2(1);
+                WaitBird2();
+            }    
         }
         
         
