@@ -73,12 +73,12 @@ public class Weapon1Script : MonoBehaviour
         {
             Destroy(collision.gameObject);
             Hide();
-            StartCoroutine(WaitFive());
+            //StartCoroutine(WaitFive());
         }
         if (collision.transform.gameObject.layer == 7)
         {
             Hide();
-            StartCoroutine(WaitTen());
+            //StartCoroutine(WaitTen());
         }
     }
 }
