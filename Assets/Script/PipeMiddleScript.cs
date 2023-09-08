@@ -42,10 +42,12 @@ public class PipeMiddleScript : MonoBehaviour
     {
         if (collision.gameObject.layer == 3 && Bird1Collision == false)
         {
+            Physics2D.IgnoreCollision(GetComponent<Collider2D>(), Bird1.GetComponent<Collider2D>(), true);
             if (Bird1.birdIsAlive == true)
             {
                 logic.addScore(1);
-                WaitBird1();
+                
+                //WaitBird1();
             }
         }
         if (collision.gameObject.layer == 7 && Bird2Collision == false)
@@ -53,7 +55,7 @@ public class PipeMiddleScript : MonoBehaviour
             if (Bird2.bird2IsAlive == true)
             {
                 logic.addScore2(1);
-                WaitBird2();
+                //WaitBird2();
             }    
         }
         
