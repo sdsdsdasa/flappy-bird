@@ -23,20 +23,6 @@ public class PipeMiddleScript : MonoBehaviour
         // find the connection
     }
 
-    public IEnumerator WaitBird1()
-    {
-        Bird1Collision = true;
-        yield return new WaitForSeconds(0.5f);
-        Bird1Collision = false;
-    }
-
-    public IEnumerator WaitBird2()
-    {
-        Bird2Collision = true;
-        yield return new WaitForSeconds(0.5f);
-        Bird2Collision = false;
-    }
-
     public void OnTriggerEnter2D(Collider2D collision)
         // providing collision effect
     {
@@ -46,16 +32,14 @@ public class PipeMiddleScript : MonoBehaviour
             if (Bird1.birdIsAlive == true)
             {
                 logic.addScore(1);
-                
-                //WaitBird1();
             }
         }
         if (collision.gameObject.layer == 7 && Bird2Collision == false)
         {
+            Physics2D.IgnoreCollision(GetComponent<Collider2D>(), Bird1.GetComponent<Collider2D>(), true);
             if (Bird2.bird2IsAlive == true)
             {
                 logic.addScore2(1);
-                //WaitBird2();
             }    
         }
         
