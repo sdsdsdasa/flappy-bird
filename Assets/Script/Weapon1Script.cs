@@ -8,7 +8,6 @@ public class Weapon1Script : MonoBehaviour
     public BirdScript Bird1Status;
     public Transform BirdPosition;
     public GameObject Bird1;
-    //public Vector2 hidePosition = new Vector2(0,80);
     public bool Avalible = true;
     
 
@@ -22,15 +21,12 @@ public class Weapon1Script : MonoBehaviour
 
     public void Show()
     {
-        Debug.Log(Avalible);
         if (Avalible == true)
         {
             transform.position = BirdPosition.position;
             myRigidbody.velocity = Vector2.right;
         }
     }
-
-
 
     public void Hide()
     {
@@ -55,8 +51,6 @@ public class Weapon1Script : MonoBehaviour
     }
 
 
-
-
         private void Update()
     {
         myRigidbody.velocity = myRigidbody.velocity + Vector2.right;
@@ -68,17 +62,14 @@ public class Weapon1Script : MonoBehaviour
 
     public void OnCollisionEnter2D(Collision2D collision)
     {
-        
         if (collision.transform.gameObject.tag == "Pipe")
         {
             Destroy(collision.gameObject);
-            Hide();
-            //StartCoroutine(WaitFive());
+            StartCoroutine(WaitFive());
         }
         if (collision.transform.gameObject.layer == 7)
         {
-            Hide();
-            //StartCoroutine(WaitTen());
+            StartCoroutine(WaitTen());
         }
     }
 }

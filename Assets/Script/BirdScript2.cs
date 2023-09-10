@@ -55,12 +55,10 @@ public class BirdScript2 : MonoBehaviour
 
         if (transform.position.y < deadZone)
         {
-            //logic.gameOver();
             bird2IsAlive = false;
         }
         else if (transform.position.y > -1 * deadZone)
         {
-            //logic.gameOver();
             bird2IsAlive = false;
         }
 
