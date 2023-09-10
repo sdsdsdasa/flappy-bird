@@ -18,7 +18,6 @@ public class HighScoreScript : MonoBehaviour
     private void Start()
     {
         logic = GameObject.FindGameObjectWithTag("Logic").GetComponent<LogicScript>();
-        //HighScore.text = PlayerPrefs.GetInt("ExtremeExtremeHighScore").ToString();
         HighScore.text = PlayerPrefs.GetInt(ScenesManager.playerprefs).ToString();
     }
 

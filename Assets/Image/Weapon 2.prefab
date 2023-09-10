@@ -26,7 +26,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 49446908750047288}
   m_LocalRotation: {x: -0, y: -0, z: -0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 0.24, y: 0.08, z: 0}
+  m_LocalPosition: {x: -2.1299992, y: 0.08, z: 0}
   m_LocalScale: {x: 0.8700001, y: 0.8700001, z: 0.87000006}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -97,6 +97,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ace47b6ca7ff44e88ad6de504942897, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  myRigidbody: {fileID: 0}
+  Bird2Status: {fileID: 0}
+  BirdPosition: {fileID: 0}
+  Bird2: {fileID: 0}
+  Weapon1: {fileID: 0}
+  Avalible: 1
+  OnScreen: 0
+  rotationSpeed: 800
 --- !u!1 &49446910087078324
 GameObject:
   m_ObjectHideFlags: 0
@@ -123,7 +131,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 49446910087078324}
   m_LocalRotation: {x: -0, y: -0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 4.569999, y: -0.06000018, z: 0}
+  m_LocalPosition: {x: 2.2, y: -0.06000018, z: 0}
   m_LocalScale: {x: 0.87000006, y: 0.8700001, z: 0.87000006}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -194,6 +202,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ace47b6ca7ff44e88ad6de504942897, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  myRigidbody: {fileID: 0}
+  Bird2Status: {fileID: 0}
+  BirdPosition: {fileID: 0}
+  Bird2: {fileID: 0}
+  Weapon1: {fileID: 0}
+  Avalible: 1
+  OnScreen: 0
+  rotationSpeed: 800
 --- !u!1 &2243025865318421312
 GameObject:
   m_ObjectHideFlags: 0

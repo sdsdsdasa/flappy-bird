@@ -18,64 +18,60 @@ public class Weapon2Script : MonoBehaviour
         Bird2Status = GameObject.FindGameObjectWithTag("Bird2").GetComponent<BirdScript2>();
         Physics2D.IgnoreCollision(GetComponent<Collider2D>(), Bird2.GetComponent<Collider2D>(), true);
         Physics2D.IgnoreCollision(GetComponent<Collider2D>(), Weapon1.GetComponent<Collider2D>(), true);
-        Hide();
+        //Hide();
     }
 
-    public void Show()
-    {
-        if (Avalible == true)
-        {
-            Debug.Log("tp"+transform.position);
-            Debug.Log("bp"+BirdPosition.position);
-            transform.position = BirdPosition.position;
-            OnScreen = true;
-        }
-    }
+    //public void Show()
+    //{
+    //    if (Avalible == true)
+    //    {
+    //        transform.position = BirdPosition.position;
+    //        OnScreen = true;
+    //    }
+    //}
 
-    public void Hide()
-    {
-        transform.rotation = new Quaternion(0, 0, 0, 0);
-        transform.position = new Vector2(0, 80);
-        myRigidbody.velocity = new Vector2(0, 0);
-        OnScreen = false;
-    }
+    //public void Hide()
+    //{
+    //    transform.rotation = new Quaternion(0, 0, 0, 0);
+    //    transform.position = new Vector2(0, 80);
+    //    myRigidbody.velocity = new Vector2(0, 0);
+    //    OnScreen = false;
+    //}
 
 
-    public IEnumerator WaitTen()
-    {
-        Avalible = false;
-        yield return new WaitForSeconds(10f);
-        Avalible = true;
-    }
+    //public IEnumerator WaitTen()
+    //{
+    //    Avalible = false;
+    //    yield return new WaitForSeconds(10f);
+    //    Avalible = true;
+    //}
 
 
-    public IEnumerator ShowAndHide()
-    {
-        Show();
-        yield return new WaitForSeconds(3f);
-        Hide();
-        Debug.Log("F");
-        Avalible = false;
-        yield return new WaitForSeconds(5f);
-        Debug.Log("T");
-        Avalible = true;
-    }
+    //public IEnumerator ShowAndHide()
+    //{
+    //    Show();
+    //    yield return new WaitForSeconds(3f);
+    //    Hide();
+    //    Debug.Log("F");
+    //    Avalible = false;
+    //    yield return new WaitForSeconds(5f);
+    //    Debug.Log("T");
+    //    Avalible = true;
+    //}
 
 
     private void Update()
     {
         transform.Rotate(Vector3.forward * rotationSpeed * Time.deltaTime);
-        if (Input.GetKeyDown(KeyCode.M) == true && Bird2Status.bird2IsAlive == true)
-        {
-            transform.position = BirdPosition.position;
-            StartCoroutine(ShowAndHide());
-        }
-        if (OnScreen == true)
-        {
-            Debug.Log("tp" + transform.position);
-            Debug.Log("bp" + BirdPosition.position);
-            transform.position = BirdPosition.position;
-        }
+        //if (Input.GetKeyDown(KeyCode.M) == true && Bird2Status.bird2IsAlive == true)
+        //{
+        //    transform.position = BirdPosition.position;
+        //    //StartCoroutine(ShowAndHide());
+        //}
+        //if (OnScreen == true)
+        //{
+        //    transform.position = BirdPosition.position;
+        //}
 
     }
 

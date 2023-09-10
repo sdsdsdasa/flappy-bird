@@ -16,7 +16,7 @@ public class Weapon1Script : MonoBehaviour
     {
         Bird1Status = GameObject.FindGameObjectWithTag("Bird").GetComponent<BirdScript>();
         Physics2D.IgnoreCollision(GetComponent<Collider2D>(), Bird1.GetComponent<Collider2D>(), true);
-        Hide();
+        //Hide();
     }
 
     public void Show()
@@ -54,10 +54,10 @@ public class Weapon1Script : MonoBehaviour
         private void Update()
     {
         myRigidbody.velocity = myRigidbody.velocity + Vector2.right;
-        if (Input.GetKeyDown(KeyCode.Q) == true && Bird1Status.birdIsAlive == true)
-        {
-            Show();
-        }
+        //if (Input.GetKeyDown(KeyCode.Q) == true && Bird1Status.birdIsAlive == true)
+        //{
+        //    Show();
+        //}
     }
 
     public void OnCollisionEnter2D(Collision2D collision)
@@ -65,11 +65,11 @@ public class Weapon1Script : MonoBehaviour
         if (collision.transform.gameObject.tag == "Pipe")
         {
             Destroy(collision.gameObject);
-            StartCoroutine(WaitFive());
+            //StartCoroutine(WaitFive());
         }
         if (collision.transform.gameObject.layer == 7)
         {
-            StartCoroutine(WaitTen());
+            //StartCoroutine(WaitTen());
         }
     }
 }

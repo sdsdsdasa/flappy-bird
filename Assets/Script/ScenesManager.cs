@@ -12,7 +12,7 @@ public class ScenesManager : MonoBehaviour
     public static string playerprefs;
     public static string player2prefs;
     public static float WaitForSecond;
-    public static string mode = "solo";
+    public static string mode = "duo";
     public static string level = "Easy";
 
     public void SoloMode()

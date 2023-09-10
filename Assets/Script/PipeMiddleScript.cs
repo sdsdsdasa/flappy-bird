@@ -6,8 +6,6 @@ public class PipeMiddleScript : MonoBehaviour
 {
     public LogicScript logic;
     // public connection between script, in this case LogicScript
-    private bool Bird1Collision = false;
-    private bool Bird2Collision = false;
     public BirdScript Bird1;
     public BirdScript2 Bird2;
 
@@ -26,7 +24,7 @@ public class PipeMiddleScript : MonoBehaviour
     public void OnTriggerEnter2D(Collider2D collision)
         // providing collision effect
     {
-        if (collision.gameObject.layer == 3 && Bird1Collision == false)
+        if (collision.gameObject.layer == 3)
         {
             Physics2D.IgnoreCollision(GetComponent<Collider2D>(), Bird1.GetComponent<Collider2D>(), true);
             if (Bird1.birdIsAlive == true)
@@ -34,9 +32,9 @@ public class PipeMiddleScript : MonoBehaviour
                 logic.addScore(1);
             }
         }
-        if (collision.gameObject.layer == 7 && Bird2Collision == false)
+        if (collision.gameObject.layer == 7)
         {
-            Physics2D.IgnoreCollision(GetComponent<Collider2D>(), Bird1.GetComponent<Collider2D>(), true);
+            Physics2D.IgnoreCollision(GetComponent<Collider2D>(), Bird2.GetComponent<Collider2D>(), true);
             if (Bird2.bird2IsAlive == true)
             {
                 logic.addScore2(1);
