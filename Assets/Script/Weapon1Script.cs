@@ -19,36 +19,36 @@ public class Weapon1Script : MonoBehaviour
         //Hide();
     }
 
-    public void Show()
-    {
-        if (Avalible == true)
-        {
-            transform.position = BirdPosition.position;
-            myRigidbody.velocity = Vector2.right;
-        }
-    }
+    //public void Show()
+    //{
+    //    if (Avalible == true)
+    //    {
+    //        transform.position = BirdPosition.position;
+    //        myRigidbody.velocity = Vector2.right;
+    //    }
+    //}
 
-    public void Hide()
-    {
-        transform.rotation = new Quaternion(0, 0, 0, 0);
-        transform.position = new Vector2(0, 80);
-        myRigidbody.velocity = new Vector2(0, 0);
-    }
+    //public void Hide()
+    //{
+    //    transform.rotation = new Quaternion(0, 0, 0, 0);
+    //    transform.position = new Vector2(0, 80);
+    //    myRigidbody.velocity = new Vector2(0, 0);
+    //}
 
 
-    public IEnumerator WaitTen()
-    {
-        Avalible = false;
-        yield return new WaitForSeconds(10f);
-        Avalible = true;
-    }
+    //public IEnumerator WaitTen()
+    //{
+    //    Avalible = false;
+    //    yield return new WaitForSeconds(10f);
+    //    Avalible = true;
+    //}
 
-    public IEnumerator WaitFive()
-    {
-        Avalible = false;
-        yield return new WaitForSeconds(5f);
-        Avalible = true;
-    }
+    //public IEnumerator WaitFive()
+    //{
+    //    Avalible = false;
+    //    yield return new WaitForSeconds(5f);
+    //    Avalible = true;
+    //}
 
 
         private void Update()
@@ -58,6 +58,7 @@ public class Weapon1Script : MonoBehaviour
         //{
         //    Show();
         //}
+        //???????????????/ Bird1Status required for colddown1script?
     }
 
     public void OnCollisionEnter2D(Collision2D collision)
@@ -67,9 +68,9 @@ public class Weapon1Script : MonoBehaviour
             Destroy(collision.gameObject);
             //StartCoroutine(WaitFive());
         }
-        if (collision.transform.gameObject.layer == 7)
-        {
-            //StartCoroutine(WaitTen());
-        }
+        //if (collision.transform.gameObject.layer == 7)
+        //{
+        //    StartCoroutine(WaitTen());
+        //}
     }
 }
